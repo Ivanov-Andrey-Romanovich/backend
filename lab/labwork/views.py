@@ -37,7 +37,7 @@ def render_blog(request, additional_context = {}):
     return render(request, 'labwork/index.html', context)
 
 def create_post(request):
-    blog = Blog.objects.get('id'=='3')
+    blog = get_object_or_404(Blog, id = 3)
     subject = request.user.username
     text = request.POST['text']
     subject_error = None
@@ -55,7 +55,7 @@ def create_post(request):
         }
         return render_blog(request, error_context)
     else:
-        Post(blog_id = b_id,subject = subject, text = text).save()
+        Post(blog_id = 3,subject = subject, text = text).save()
         return HttpResponseRedirect(reverse('blog_by_id',kwargs = {})) 
 
 
