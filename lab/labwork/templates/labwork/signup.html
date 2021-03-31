@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Sign Up</title>   
+        <link rel="stylesheet" href="/static/labwork/css/style.css" type="text/css"> 
+    </head>
+    <body>
+        <div class="content wrapper">
+            <div class="user">
+            <div class="user__info">
+            <form method = "POST" class="user__info__stats">
+            {% csrf_token %}
+            <table>{{form}}</table>
+            <input type = "submit" value = "Sign Up" class="btn btn-green">
+            </form>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

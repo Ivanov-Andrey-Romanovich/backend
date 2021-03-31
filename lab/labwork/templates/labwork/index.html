@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Иванов Андрей</title>
+    <link rel="stylesheet" href="/static/labwork/css/style.css" type="text/css">
+  </head>
+
+  <body>
+    {% csrf_token %}
+  <div class="menu">
+    <div class="wrapper">
+      Электронное портфолио
+    </div>
+    
+    <div class="login">
+        <ul>
+            {% if request.user.is_authenticated %}
+        <li class="tabs__header__tab">{{ request.user.username}}</li><li class="tabs__header__tab"> 
+            <a href = "{% url 'logout' %}?next={{request.path}}">
+            Log out</a></li>
+        {% else %}
+        <li class="tabs__header__tab"> <a href = "{% url 'login' %}?next={{request.path}}">login</a>
+        </li><li class="tabs__header__tab"> <a href = "{% url 'signup' %}">Sign Up</a> </li>
+        {% endif %}
+        </ul>
+    </div>
+  </div>
+  <div class="content wrapper">
+    <div class="user">
+      <h3>
+        Иванов Андрей Романович
+      </h3>
+      <div class="user__info">
+        <div class="user__info__image">
+            <a href="https://ae01.alicdn.com/kf/HTB14FUQLXXXXXbpXFXXq6xXFXXXu/Spring-Autumn-jacket-Plus-size-men-casual-cotton-jacket-European-cool-man-coat-Military-jacket-for.jpg" target = "_blank"><img src = "https://ae01.alicdn.com/kf/HTB14FUQLXXXXXbpXFXXq6xXFXXXu/Spring-Autumn-jacket-Plus-size-men-casual-cotton-jacket-European-cool-man-coat-Military-jacket-for.jpg" ></a>
+        </div>
+        <div class="user__info__stats">
+          <table>
+            <tr>
+              <td>Дата рождения</td>
+              <td>15.12.1999</td>
+            </tr>
+            <tr>
+              <td>Место рождения</td>
+              <td><a href = "https://www.google.com/maps/place/%D0%A1%D0%BB%D0%BE%D0%B1%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9,+%D0%9A%D0%B8%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB./@58.7265325,50.0927378,12z/data=!3m1!4b1!4m5!3m4!1s0x43fc85dcda5ea1cf:0xf131d571747f1920!8m2!3d58.7286487!4d50.1731648" target = "_blank">Слободской</a></td>
+            </tr>
+            <tr>
+              <td>Семейное положение</td>
+              <td>не женат</td>
+            </tr>
+            <tr>
+              <td>Опыт работы</td>
+              <td>1 год</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="tabs">
+        <ul class="tabs__header">
+          <li name="tab1" class="tabs__header__tab">
+            <a  onclick="activateTab('tab1')">О себе</a>
+          </li>
+           <li name="tab2" class="tabs__header__tab">
+            <a  onclick="activateTab('tab2')">Проекты</a>
+          </li>
+           <li name="tab3" class="tabs__header__tab">
+            <a  onclick="activateTab('tab3')">Ссылки</a>
+          </li>
+          <li name="tab4" class="tabs__header__tab active">
+            <a onclick="activateTab('tab4')">Сообщения</a>
+          </li>
+        </ul>
+        <div class="tabs__body">
+          <div class="tabs__body__item">
+              Закончил <a href = "http://licey9.ucoz.ru/" target="_blank">Слободской Лицей</a> с золотой медалью, в данный момент обучаюсь в Высшей Школе Экономики в Нижнем Новгороде на специальности Прикладная математика и информатика, 1 курс. Самомтоятельно изучал JavaScript, в том числе React. Подробнее ознакомиться с проектами можно <a onclick="activateTab('tab2')">здесь</a>.
+          </div>
+          <div class="tabs__body__item ">
+            Certe, inquam, pertinax non ero tibique, si mihi probabis ea, quae dices, libenter assentiar.Probabo, inquit, modo ista sis aequitate, 
+			quam ostendis.Sed uti oratione perpetua malo quam interrogare aut interrogari.Ut placet, inquam.Tum dicere exorsus est.
+Primum igitur, inquit, sic agam, ut ipsi auctori huius disciplinae placet: constituam, quid et quale sit id, de quo quaerimus, non quo ignorare vos arbitrer, 
+sed ut ratione et via procedat oratio.Quaerimus igitur, quid sit extremum et ultimum bonorum, quod omnium philosophorum sententia tale debet esse, 
+ut ad id omnia referri oporteat, ipsum autem nusquam.Hoc Epicurus in voluptate ponit, quod summum bonum esse vult, summumque malum dolorem, idque instituit docere sic.
+
+
+          </div>
+          <div class="tabs__body__item ">
+            <ul>
+                <li><img src= "static/labwork/image/vk.png"><a href = "https://vk.com/justbemine" target = "_blank">вконтакте</a></li>
+                <li><img src= "static/labwok/image/mail.png "><a>andrey151599@gmail.com</a></li>
+                <li><img src= "static/labwork/image/fb.jpg"><a href = "https:/www.facebook.com/profile.php?id=100027512868051" target = "_blank">facebook</a></li>
+              </ul>
+          </div>
+          <div class="tabs__body__item active">
+            {% csrf_token %}
+            <h2>
+                You are looking on a blog &quot;{{blog.title}}&quot; 
+                created at {{blog.created_at.date.isoformat}}
+            </h2>
+            <ul>
+                {% for post in posts %}
+                    <li><i>{{ post.created_at }}</i><b>{{ post.subject }}</b><br/>
+                        <p>{{ post.text }}</p> </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="wrapper">
+      <h2 class="contacts-title">Написать сообщение</h2>
+      <form action = "{% url 'blog_by_id' %}" method="POST">
+        {% csrf_token %}
+        <textarea type="text" name = "text" maxlength="4096" rows="10" cols="80" placeholder="Ваше сообщение">
+            {{text}}</textarea>
+            {% if text_error %}
+            <p style = "color:red;">{{text_error}}</p>
+            {%endif%}
+            {% if subject_error %}
+            <p style = "color:red;">{{subject_error}}</p>
+            {%endif%}
+        <input type="submit" class="btn btn-green" value="Create post">
+    </form>
+    </div>
+  </div>
+  <script src=" static/labwork/scripts/scripts.js "></script>   
+</body>
+</html>

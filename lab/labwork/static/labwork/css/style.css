@@ -1,0 +1,232 @@
+body {
+    background: #cbcbcb url("/static/labwork/image/140520040122.jpg");
+    margin: 0;
+    padding: 0;
+  }
+  
+  .wrapper {
+    width: 555px;
+    margin: auto;
+  }
+  .login {
+    width: 200px;
+    margin-top:-50px;
+     
+    float:right;
+  }
+  .menu {
+    background: #111111;
+    color: white;
+    height: 50px;
+  }
+  
+  .content {
+    padding:80px 0;
+      margin-bottom:100px;
+  }
+  
+  .footer {
+    background: #111111;
+    padding: 5px 10px;
+      color: white;
+      width:100%;
+  }
+  .contacts-title{
+      text-align: center;
+     margin-top: 5px;
+      font-size: 18px;
+      
+  }
+  .footer input[type="text"] {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 50%;
+    padding: 5px 10px;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: Tahoma, sans-serif;
+    line-height: 24px;
+    outline: none;
+    border: 2px solid #b2b2b2;
+    border-radius: 2px;
+      margin-left: 25%;
+  }
+  .footer contacts-form input[type="text"]:hover {
+    border: 2px solid black;
+  }
+  .footer input[type="text"]:focus {
+    border: 2px solid #74b9d7;
+  }
+  .footer .btn {
+    width: 30%;
+    border-radius: 3px;
+      margin-left: 25%;
+      margin-top: 5px;
+  }
+  .menu .btn {
+    width: 70px;
+    border-radius: 3px;
+   
+   
+    
+      
+  }
+  .btn {
+    display: inline-block;
+    padding: 5px;
+    font-size: 15px;
+    line-height: 24px;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  
+  .btn-green {
+    background: #74b9d7;
+  }
+  
+  .btn-green:hover {
+    background: #32286c;
+  }
+  
+  .btn-green:active {
+    background: #32286c;
+    color: #8581a1;
+  }
+  .user {
+    background: white;
+    padding: 30px 54px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px 1px #999;
+  }
+  .menu .wrapper{
+      padding-top: 12px;
+      text-align: center;
+      font-size: 25px;
+  }
+  .user h3 {
+    margin-top: 0;
+  }
+  
+  .user__info {
+    position: relative;
+  }
+  
+  .user__info__image {
+    width: 138px;
+    height: 138px;
+    background: #74b9d7 url(https://ae01.alicdn.com/kf/HTB14FUQLXXXXXbpXFXXq6xXFXXXu/Spring-Autumn-jacket-Plus-size-men-casual-cotton-jacket-European-cool-man-coat-Military-jacket-for.jpg) -1950px -70px ;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .user__info__image a img{ 
+    width: 138px;
+    height: 138px;  
+  }
+  .user__info__stats table tr td a {
+    cursor: pointer;
+      text-decoration: none;
+  }
+  .user__info__stats table tr td a:hover {
+    color: #55d6f9;
+    cursor: pointer;
+      text-decoration: none;
+  }
+  .user__info__stats table tr td a:active {
+    color: black;
+    cursor: pointer;
+      text-decoration: none;
+  }
+  
+  .user__info__stats {
+    margin-left: 160px;
+    min-height: 138px;
+  }
+  
+  
+  .user__info__stats table {
+    width: 100%;
+    color: #777;
+  }
+  
+  .user__info__stats table tr {
+    height: 25px;
+  }
+  
+  .tabs {
+    margin: 23px 0 0 0;
+   }
+  
+   .tabs__header {
+    padding: 0;
+    list-style-type: none;
+    border-bottom: 2px solid #55d6f9;
+  }
+  
+  .tabs__header__tab {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 15px;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    top: 2px;
+  }
+  .tabs__body__item ul li{
+      list-style-type: none;
+      margin: 5px;
+      display:inline-block;
+      padding: 5px;
+      
+  }
+  .tabs__body__item ul li img{
+      height: 30px;
+      width: 30px;
+      margin-right: 7px;
+      
+  }
+  .tabs__body__item ul li a{
+      vertical-align: top;
+      
+  }
+  .tabs__header__tab.active {
+    border: 2px solid #55d6f9;
+    border-bottom: 2px solid white;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .tabs__header__tab a {
+    color: #55d6f9;
+    cursor: pointer;
+      text-decoration: none;
+  }
+  .tabs__body__item a {
+    color: #55d6f9;
+    cursor: pointer;
+      text-decoration: none;
+  }
+  
+  .tabs__body__item {
+    font-size: 24px;
+    padding: 50px 0;
+    display: none;
+  }
+  
+  .tabs__header__tab.active a {
+    color: black;
+    font-weight: bolder;
+  }
+  
+  .tabs__body__item.active {
+    display: inline-block;
+  }
